@@ -1,0 +1,20 @@
+name: Deploy - Production
+
+on:
+  push:
+    branches: [ main ]
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to Production Server
+        run: |
+          echo "Deploying to production..."
+          # Example:
+          # kubectl set image deployment/nextjs-app nextjs-app=ghcr.io/${{ github.repository }}:${{ github.sha }}

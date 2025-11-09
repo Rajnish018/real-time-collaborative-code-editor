@@ -3,7 +3,7 @@ name: CI - Next.js
 on:
   pull_request:
     branches: [ main, develop ]
-  push:
+  push: 
     branches: [ feature/*, develop, main ]
 
 jobs:
